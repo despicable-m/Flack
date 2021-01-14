@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+{% block main %}
+{% if get_flashed_messages() %}
+<header>
+    <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+        <strong>{{ get_flashed_messages() | join(" ") }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</header>
+{% endif %}
+<form class="form-group" id="display-form" autofocus autocomplete="off" action="{{ url_for('create') }}" method="POST">
+    <input type="text" class="form-control" placeholder="Enter display name" id="display-name" name="display-name">
+    <p class="error"></p>
+    <div id="btn-div">
+        <button class="display-button">REGISTER</button>
+    </div>
+
+</form>
+
+<script>
+    
+    document.querySelector('#display-form').addEventListener('submit', (event) => {
+        let user = document.querySelector('#display-name').value;
+        event.preventDefault();
+
+        // prevents submission of usernames less than 2 characters long
+        if (user.length < 2) {
+            console.log('after length: ' + user);
+            document.querySelector('.error').innerHTML =
+                'Display name must have at least 2 characters'
+
+            return false
+        }
+
+        // posts display name to server and gets a json response
+        const request = new XMLHttpRequest();
+        request.open('GET', `/check_user/${user}`);
+
+        // gets json response from server
+        request.onload = () => {
+            const response = request.responseText;
+            var resp = JSON.parse(response);
+            resps = resp['error']
+
+            // uses the response from server prevent user from
+            // submitting an existing display name and 
+            // special characters aside underscore and hyphen
+            if (resps === 'user_name_exists') {
+                document.querySelector('.error').innerHTML =
+                    'Display name exists'
+
+            } else if (resps === 'special_character') {
+                document.querySelector('.error').innerHTML =
+                    'Please do not include special characters aside _ and -'
+            } else {
+                localStorage.setItem('displayName', user)
+                document.querySelector('#display-form').submit();
+            }
+        };
+        request.send();
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,330 @@
+body::-webkit-scrollbar {
+  width: 3px;
+}
+
+#display-form {
+  margin-top: 100px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+}
+#display-form #display-name {
+  align-self: center;
+}
+#display-form .error {
+  color: red;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  font-size: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3px;
+}
+#display-form #btn-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#display-form #btn-div .display-button {
+  margin-top: 1rem;
+  width: 90px;
+  height: 40px;
+  background-color: #291111;
+  border: none;
+  color: #DCD0D0;
+  border-radius: 7.5px;
+}
+
+#channel-form {
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 350px;
+}
+#channel-form #channel-text {
+  width: 250px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  padding-left: 6px;
+  color: #1a1818;
+  border-radius: 10px;
+}
+#channel-form #sCha-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 30px;
+}
+#channel-form #sCha-div #sCha-button {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 70px;
+  border-radius: 10px;
+  height: 40px;
+  background-color: #291111;
+  border: none;
+  text-decoration: none;
+  color: #DCD0D0;
+  margin-left: 10px;
+}
+
+.overall-page {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.overall-page .page {
+  display: flex;
+  flex-direction: column;
+  max-height: 727.3px;
+  max-width: 962.5px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+.overall-page .page .page-header {
+  min-height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.overall-page .page .page-header #app-name {
+  min-width: 250px;
+  background-color: #190909;
+  border-top-left-radius: 10px;
+  border-bottom: 1px solid #373737;
+}
+.overall-page .page .page-header #app-name p {
+  font-weight: bold;
+  margin-top: 8px;
+  margin-bottom: auto;
+  margin-left: 9px;
+  font-size: 22px;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  color: white;
+}
+.overall-page .page .page-header #channel-detail {
+  background-color: #F1F1F1;
+  width: 100%;
+  border-top-right-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.overall-page .page .page-header #channel-detail h5 {
+  margin-left: 9px;
+  margin-bottom: auto;
+  margin-top: auto;
+  color: #371717;
+}
+.overall-page .page .page-main {
+  max-height: 677.3px;
+  display: flex;
+  flex-direction: row;
+}
+.overall-page .page .page-main .channel-main {
+  height: 677.3px;
+  max-width: 250px;
+  /* styling for channel list
+     it does not include the top row where the app name (FLACK) is */
+}
+.overall-page .page .page-main .channel-main .channel-col {
+  min-width: 250px;
+  max-height: 60%;
+  height: 60%;
+  flex-grow: 3;
+  background-color: #190909;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+.overall-page .page .page-main .channel-main .channel-col .chan-mess-head {
+  padding-bottom: 6px;
+}
+.overall-page .page .page-main .channel-main .channel-col .chan-mess-head .channels-head {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+.overall-page .page .page-main .channel-main .channel-col .chan-mess-head .channels-head p {
+  margin-right: 6px;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  margin-top: 6px;
+  margin-bottom: 0px;
+}
+.overall-page .page .page-main .channel-main .channel-col .chan-mess-head .channels-head #create-button {
+  border-radius: 2rem;
+  border: 2px solid white;
+  background-color: #190909;
+  color: white;
+  width: 20px;
+  height: 20px;
+  margin-top: 7.2px;
+  line-height: 0rem;
+  text-justify: auto;
+  padding: 0px;
+  margin-top: 12px;
+  padding-bottom: 4.1px;
+  padding-right: 1px;
+  font-weight: bold;
+}
+.overall-page .page .page-main .channel-main .channel-col .channel-list {
+  height: auto;
+  padding: 0px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.overall-page .page .page-main .channel-main .channel-col .channel-list .nav-link {
+  border-radius: 5px;
+}
+.overall-page .page .page-main .channel-main .channel-col .channel-list .nav-link p {
+  margin: 0px;
+  color: white;
+}
+.overall-page .page .page-main .channel-main .channel-col .channel-list .nav-link:hover {
+  background-color: #553C3C;
+}
+.overall-page .page .page-main .channel-main .private-channels {
+  flex-grow: 1;
+  background-color: #190909;
+  padding: 0px;
+  margin: 0px;
+  height: 40%;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+.overall-page .page .page-main .channel-main .private-channels #pri {
+  color: white;
+  font-weight: bold;
+  font-size: 1 rem;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+.overall-page .page .page-main .channel-main .private-channels .nav-link2 {
+  color: white;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-left: 2px;
+  margin-right: 2px;
+  border-radius: 5px;
+}
+.overall-page .page .page-main .channel-main .private-channels .nav-link2 p {
+  margin: 0px;
+}
+.overall-page .page .page-main .channel-main .private-channels .nav-link2:hover {
+  background-color: #553C3C;
+}
+.overall-page .page .page-main .chan-mess-main {
+  background-color: #F5F5F5;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 4;
+  max-width: 74%;
+  justify-content: flex-end;
+  max-height: 677.3px;
+}
+.overall-page .page .page-main .chan-mess-main .alert {
+  align-self: flex-end;
+}
+.overall-page .page .page-main .chan-mess-main .mess-box {
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: grid;
+  scrollbar-width: thin;
+}
+.overall-page .page .page-main .chan-mess-main .mess-box .text {
+  max-width: 600px;
+}
+.overall-page .page .page-main .chan-mess-main .messages {
+  height: 50px;
+  background-color: #EEECEC;
+}
+.overall-page .page .page-main .chan-mess-main .messages .mess-send {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.overall-page .page .page-main .chan-mess-main .messages .mess-send #messag {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+.overall-page .page .page-main .chan-mess-main .messages .mess-send #messag #send-message {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 300px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  padding-left: 6px;
+}
+.overall-page .page .page-main .chan-mess-main .messages .mess-send #messag #send-button {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 70px;
+  border-radius: 1.2rem;
+  height: 40px;
+  background-color: #291111;
+  border: none;
+  text-decoration: none;
+  color: #DCD0D0;
+  margin-left: 10px;
+}
+.overall-page .page h4,
+.overall-page .page h5,
+.overall-page .page h6 {
+  color: white;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
+.overall-page .page .text {
+  border-radius: 5px;
+  background-color: white;
+  margin-top: 4.5px;
+  margin-bottom: 4.5px;
+  margin-left: 9px;
+  margin-right: 9px;
+  padding: 9px;
+  max-width: 70%;
+  width: max-content;
+}
+.overall-page .page .text .sender-time {
+  display: flex;
+  flex-direction: row;
+}
+.overall-page .page .text .sender-time #user_id {
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 3px;
+}
+.overall-page .page .text .sender-time #separator {
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 3px;
+  line-height: 1rem;
+}
+.overall-page .page .text .sender-time #time {
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  font-size: 12px;
+  color: #8D8585;
+  margin-bottom: 3px;
+}
+.overall-page .page .text .message {
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  margin-bottom: 0px;
+  font-size: 12px;
+}
+
+/*# sourceMappingURL=style.css.map */
