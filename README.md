@@ -1,7 +1,5 @@
 # Flack
 
-Web Programming with Python and JavaScript
-
 The aim of this project is to create a messaging web app using python, javascript and css. Users are required to have a display name before they are allowed to use the app. Once registered, users automatically join a 'default' channel where they're introduced to the app. Users are allowed to create a new channel by clicking on (+) button next to "MY CHANNELS". Users can also send private messages to other users - who are automatically added - listed under 'PRIVATE CHATS'. In all channels and private conversations, users see all older messages in each channel/chat.
 
 ## /
