@@ -8,9 +8,48 @@ Users can register using any username, provided that username has not been chose
 
 ## Homepage
 
-Once a user successfully registers using a unique username, the user is redirected to the homepage of the messaging web application; where the user can create a new channel, join an existing channel or text users privately.
+Once a user successfully registers using a unique username, the user is redirected to the homepage of the web application; where the user can create a new channel, join existing channels or text other users privately.
 
 ![Homepage after registering](readme_assets/flack_homepage.png)
+
+## Creating channels
+
+Any user can create a channel by clicking the plus ⨁ icon next to **MY CHANNEL**. Once a user creates a channel, this channel is displayed to other users who can join; send and receive messages from the created channel.
+
+## Joining channels
+
+In order to send a message, the user must first join a channel. To do this, the user just needs to click on the name of the channel s/he wishes to join.
+
+## Sending messages - channels
+
+To send messages to channels, the user needs to click on the channel name, type the message in the text field and hit send.
+
+## Sending messages - private
+The user needs to click on the username of the user s/he wishes to send the message to under **PRIVATE CHATS**, type the message and hit send.
+
+![Messaging](readme_assets/flack_messaging.png)
+
+# Files
+
+## Back end
+
+### [application.py](application.py "application.py")
+    This powers the backend of the app. The file contains all the apps flask routes as well as socketio routes. It controls creating display name, creating new channels, storing of messages in memory, storing of channels in memory, messaging and private messaging, emitting messages and channels to the frontend among others.
+
+        # requirements.txt
+    Contains all python packages needed to run the app
+
+## /static
+
+        # script.js
+    Contains most of the javascript code that controls the app on the frontend. It controls creating channels and messaging.
+
+        # style.css
+    Contains the design of all pages
+
+        # style.scss
+    Sass file for style.css
+
 ## /templates
 
         # create.html
