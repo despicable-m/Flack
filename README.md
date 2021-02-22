@@ -41,6 +41,8 @@ This powers the backend of the app. The file contains all the app's flask routes
 
 A list of all python packages needed to run the app.
 
+## Front end
+
 ## __static__
 
 ### script.js
