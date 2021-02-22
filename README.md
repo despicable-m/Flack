@@ -43,7 +43,7 @@ A list of all python packages needed to run the app.
 
 ## Front end
 
-## __static__
+## _static_
 
 ### script.js
 
@@ -57,7 +57,7 @@ Contains the design of all pages.
 
 Sass file for style.css
 
-## __templates__
+## _templates_
 
 ### create.html
 
